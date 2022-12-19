@@ -1,4 +1,4 @@
-<img src="icon.png" align="right" width="90" height="90"/>
+<img src="icon.png" align="right" width="125" height="125"/>
 
 # Arrow 
 A Linear Algebra Library
