@@ -20,6 +20,21 @@ namespace arrow {
         vector(std::initializer_list<T> list) : m_components(list)  {
             std::copy(list.begin(), list.end(), m_components);
         }
+
+        T operator[](size_t i) const {
+            return m_components[i];
+        }
+
+        T& operator[](size_t i) {
+            return m_components[i];
+        }
+
+        friend vector operator+(const vector& lhs, const vector& rhs) {
+            vector result;
+            for (size_t i = 0; i < N; ++i)
+                result = lhs.m_components[i] + rhs.m_components[i];
+            return result;
+        }
     private:
         T m_components[N];
     };
