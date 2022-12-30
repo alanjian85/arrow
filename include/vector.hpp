@@ -1,8 +1,5 @@
-/*
- * arrow is freely redistributable under the GNU General Public License v3.0.
- * See the file "LICENSE" for information on usage and redistribution of this
- * file.
- */
+/* SPDX-FileCopyrightText: © 2022 Alan Jian alanjian85@outlook.com
+ * SPDX-LicenseIdentifier: GPL-3.0*/
 
 #ifndef ARROW_VECTOR_HPP
 #define ARROW_VECTOR_HPP
