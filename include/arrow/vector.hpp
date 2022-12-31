@@ -13,11 +13,11 @@ namespace arrow {
     template <typename T, size_t N>
     class vector {
     public:
-        vector(T value) {
+        vector(T value = T(0)) {
             std::fill(std::begin(m_components), std::end(m_components), value);
         }
 
-        vector(std::initializer_list<T> list) : m_components(list) {
+        vector(std::initializer_list<T> list) {
             std::copy(list.begin(), list.end(), m_components);
         }
 
@@ -25,10 +25,30 @@ namespace arrow {
 
         T &operator[](size_t i) { return m_components[i]; }
 
+        friend bool operator==(const vector &lhs, const vector &rhs) {
+            if (&lhs == &rhs)
+                return true;
+
+            for (size_t i = 0; i < N; ++i)
+                if (lhs[i] != rhs[i])
+                    return false;
+            return true;
+        }
+
+        friend bool operator!=(const vector &lhs, const vector &rhs) {
+            if (&lhs == &rhs)
+                return false;
+
+            for (size_t i = 0; i < N; ++i)
+                if (lhs[i] != rhs[i])
+                    return true;
+            return false;
+        }
+
         friend vector operator+(const vector &lhs, const vector &rhs) {
             vector result;
             for (size_t i = 0; i < N; ++i)
-                result = lhs.m_components[i] + rhs.m_components[i];
+                result[i] = lhs[i] + rhs[i];
             return result;
         }
     private:
