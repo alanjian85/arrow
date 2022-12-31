@@ -1,3 +1,6 @@
+/* SPDX-FileCopyrightText: © 2022 Alan Jian alanjian85@outlook.com
+ * SPDX-LicenseIdentifier: GPL-3.0*/
+
 #include <catch2/catch.hpp>
 
 #include "arrow/vector.hpp"
