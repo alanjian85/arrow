@@ -25,7 +25,7 @@ TEST_CASE("vector subscript", "[vector][subscript]") {
         v[3] = 3;
         v[4] = 6;
 
-        REQUIRE(v == c)
+        REQUIRE(v == c);
     }
 
     SECTION("const subscript reading") {
